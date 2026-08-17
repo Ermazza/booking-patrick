@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Prenota un incontro con Patrick Mazzarol." />
+  <title>Patrick Mazzarol | High Performance Advisor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top">
+        <span class="brand-mark">PM</span>
+        <span class="brand-copy">
+          <strong>Patrick Mazzarol</strong>
+          <small>High Performance Advisor</small>
+        </span>
+      </a>
+      <a class="nav-cta" href="#servizi">Prenota</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">INCONTRI INDIVIDUALI</p>
+          <h1>Più chiarezza.<br>Decisioni migliori.<br>Meno rumore.</h1>
+          <p class="lead">
+            Scegli la formula più adatta alle tue esigenze e prenota direttamente
+            giorno e ora disponibili.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#servizi">Scegli il tuo incontro</a>
+            <a class="btn btn-secondary" href="#come-funziona">Come funziona</a>
+          </div>
+          <div class="micro-proof">
+            <span>✓ Prenotazione automatica</span>
+            <span>✓ Pagamento sicuro</span>
+            <span>✓ Conferma immediata</span>
+          </div>
+        </div>
+
+        <aside class="hero-panel">
+          <p class="offer-kicker">3 MODALITÀ DISPONIBILI</p>
+          <h2>Dal vivo o online</h2>
+          <p>
+            Scegli il formato più adatto. Ogni servizio può essere collegato a
+            un evento Cal.com differente con disponibilità e prezzo dedicati.
+          </p>
+          <a class="btn btn-primary btn-full" href="#servizi">Visualizza i servizi</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="servizi">
+      <div class="container">
+        <p class="eyebrow">SERVIZI</p>
+        <h2 class="section-title">Scegli il tipo di incontro.</h2>
+        <div id="services-grid" class="services-grid"></div>
+      </div>
+    </section>
+
+    <section class="section contrast" id="come-funziona">
+      <div class="container">
+        <p class="eyebrow">IL PROCESSO</p>
+        <h2 class="section-title">Tre passaggi. Nessuna complicazione.</h2>
+        <div class="steps">
+          <article class="step">
+            <span>01</span>
+            <h3>Scegli il servizio</h3>
+            <p>Seleziona incontro dal vivo oppure una delle due formule online.</p>
+          </article>
+          <article class="step">
+            <span>02</span>
+            <h3>Scegli data e ora</h3>
+            <p>Il sistema mostra solo gli slot realmente disponibili per quel servizio.</p>
+          </article>
+          <article class="step">
+            <span>03</span>
+            <h3>Pagamento e conferma</h3>
+            <p>Completa il pagamento e ricevi automaticamente i dettagli dell'appuntamento.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section booking-section" id="prenota">
+      <div class="container booking-wrap">
+        <div class="booking-copy">
+          <p class="eyebrow">PRENOTAZIONE</p>
+          <h2 class="section-title" id="booking-title">Seleziona prima un servizio.</h2>
+          <p id="booking-description">
+            Clicca su “Prenota” nella scheda del servizio desiderato.
+          </p>
+          <div id="booking-summary" class="booking-summary" hidden>
+            <div><span>Servizio</span><strong id="summary-name"></strong></div>
+            <div><span>Durata</span><strong id="summary-duration"></strong></div>
+            <div><span>Prezzo</span><strong id="summary-price"></strong></div>
+          </div>
+          <div class="booking-placeholder" id="booking-fallback">
+            <strong>Calendario non ancora collegato</strong>
+            <p>
+              Inserisci il link Cal.com del servizio nel file
+              <code>services.js</code>.
+            </p>
+            <a id="external-booking-link" class="btn btn-primary" href="#" target="_blank" rel="noopener" hidden>
+              Apri calendario
+            </a>
+          </div>
+        </div>
+
+        <div class="cal-frame-wrap">
+          <iframe
+            id="cal-frame"
+            title="Prenotazione appuntamento"
+            src="about:blank"
+            loading="lazy"
+            allow="payment *; clipboard-write"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container faq-wrap">
+        <div>
+          <p class="eyebrow">FAQ</p>
+          <h2 class="section-title">Domande frequenti</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Come viene confermata la prenotazione?</summary>
+            <p>La conferma è gestita dal sistema di prenotazione collegato a Cal.com.</p>
+          </details>
+          <details>
+            <summary>Il pagamento è gestito dal sito?</summary>
+            <p>No. Il sito non conserva i dati della carta. Il pagamento viene gestito dal provider collegato alla prenotazione.</p>
+          </details>
+          <details>
+            <summary>Come modifico prezzi e servizi?</summary>
+            <p>Nome, prezzo, durata, descrizione e link Cal.com sono raccolti nel solo file <code>services.js</code>.</p>
+          </details>
+          <details>
+            <summary>Posso aggiungere altri servizi?</summary>
+            <p>Sì. Basta duplicare un blocco servizio nel file <code>services.js</code> e modificare i relativi dati.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container final-cta-inner">
+        <div>
+          <p class="eyebrow">PRENOTA</p>
+          <h2>Scegli il formato più adatto a te.</h2>
+        </div>
+        <a class="btn btn-light" href="#servizi">Vedi i servizi</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>Patrick Mazzarol</strong>
+        <p>High Performance Advisor</p>
+      </div>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Termini</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="services.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
