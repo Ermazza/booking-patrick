@@ -4,7 +4,7 @@ La pagina contiene 3 servizi:
 
 1. Incontro dal vivo — €150
 2. Incontro online — 60 minuti — €70
-3. Incontro online — 90 minuti — €130
+3. Incontro online — 120 minuti — €130
 
 ## Per cambiare servizi e prezzi
 
