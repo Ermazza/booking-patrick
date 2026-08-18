@@ -39,6 +39,39 @@ code {
 .container {
   width: min(var(--max), calc(100% - 40px));
   margin: 0 auto;
+  .bio-details {
+  position: relative !important;
+  z-index: 20 !important;
+}
+
+.bio-details summary {
+  display: inline-block !important;
+  position: relative !important;
+  z-index: 30 !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  color: #d9c7a3 !important;
+  font-weight: 700 !important;
+  font-size: .9rem !important;
+  margin: 10px 0 15px !important;
+  list-style: none !important;
+}
+
+.bio-details summary::-webkit-details-marker {
+  display: none !important;
+}
+
+.read-less {
+  display: none;
+}
+
+.bio-details[open] .read-more {
+  display: none;
+}
+
+.bio-details[open] .read-less {
+  display: inline;
+}
 }
 
 /* HEADER */
