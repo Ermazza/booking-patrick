@@ -71,3 +71,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderServices();
 });
+const bioText = document.getElementById("bioText");
+const bioToggle = document.getElementById("bioToggle");
+
+if (bioText && bioToggle) {
+  bioToggle.addEventListener("click", () => {
+    bioText.classList.toggle("expanded");
+
+    bioToggle.textContent =
+      bioText.classList.contains("expanded")
+        ? "Mostra meno"
+        : "Leggi di più";
+  });
+}
