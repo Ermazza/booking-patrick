@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Prenota un incontro con Patrick Mazzarol." />
+  <meta name="description" content="Prenota un incontro con Patrick Mazzarol, High Performance Advisor." />
   <title>Patrick Mazzarol | High Performance Advisor</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +28,8 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">INCONTRI INDIVIDUALI</p>
+          <p class="eyebrow">PATRICK MAZZAROL</p>
+          <p class="profession">HIGH PERFORMANCE ADVISOR</p>
           <h1>Più chiarezza.<br>Decisioni migliori.<br>Meno rumore.</h1>
           <p class="lead">
             Scegli la formula più adatta alle tue esigenze e prenota direttamente
@@ -45,14 +46,16 @@
           </div>
         </div>
 
-        <aside class="hero-panel">
-          <p class="offer-kicker">3 MODALITÀ DISPONIBILI</p>
-          <h2>Dal vivo o online</h2>
-          <p>
-            Scegli il formato più adatto. Ogni servizio può essere collegato a
-            un evento Cal.com differente con disponibilità e prezzo dedicati.
-          </p>
-          <a class="btn btn-primary btn-full" href="#servizi">Visualizza i servizi</a>
+        <aside class="profile-card">
+          <div class="profile-image-wrap">
+            <img src="patrick.jpg" alt="Patrick Mazzarol" class="profile-image">
+          </div>
+          <div class="profile-copy">
+            <p class="offer-kicker">PATRICK MAZZAROL</p>
+            <h2>High Performance Advisor</h2>
+            <p>Incontri individuali in presenza e online, con prenotazione diretta.</p>
+            <a class="btn btn-primary btn-full" href="#servizi">Visualizza i servizi</a>
+          </div>
         </aside>
       </div>
     </section>
@@ -73,7 +76,7 @@
           <article class="step">
             <span>01</span>
             <h3>Scegli il servizio</h3>
-            <p>Seleziona incontro dal vivo oppure una delle due formule online.</p>
+            <p>Seleziona incontro in presenza oppure una delle formule online.</p>
           </article>
           <article class="step">
             <span>02</span>
@@ -94,9 +97,7 @@
         <div class="booking-copy">
           <p class="eyebrow">PRENOTAZIONE</p>
           <h2 class="section-title" id="booking-title">Seleziona prima un servizio.</h2>
-          <p id="booking-description">
-            Clicca su “Prenota” nella scheda del servizio desiderato.
-          </p>
+          <p id="booking-description">Clicca su “Prenota” nella scheda del servizio desiderato.</p>
           <div id="booking-summary" class="booking-summary" hidden>
             <div><span>Servizio</span><strong id="summary-name"></strong></div>
             <div><span>Durata</span><strong id="summary-duration"></strong></div>
@@ -104,24 +105,13 @@
           </div>
           <div class="booking-placeholder" id="booking-fallback">
             <strong>Calendario non ancora collegato</strong>
-            <p>
-              Inserisci il link Cal.com del servizio nel file
-              <code>services.js</code>.
-            </p>
-            <a id="external-booking-link" class="btn btn-primary" href="#" target="_blank" rel="noopener" hidden>
-              Apri calendario
-            </a>
+            <p>Inserisci il link Cal.com del servizio nel file <code>services.js</code>.</p>
+            <a id="external-booking-link" class="btn btn-primary" href="#" target="_blank" rel="noopener" hidden>Apri calendario</a>
           </div>
         </div>
 
         <div class="cal-frame-wrap">
-          <iframe
-            id="cal-frame"
-            title="Prenotazione appuntamento"
-            src="about:blank"
-            loading="lazy"
-            allow="payment *; clipboard-write"
-          ></iframe>
+          <iframe id="cal-frame" title="Prenotazione appuntamento" src="about:blank" loading="lazy" allow="payment *; clipboard-write"></iframe>
         </div>
       </div>
     </section>
@@ -144,10 +134,6 @@
           <details>
             <summary>Come modifico prezzi e servizi?</summary>
             <p>Nome, prezzo, durata, descrizione e link Cal.com sono raccolti nel solo file <code>services.js</code>.</p>
-          </details>
-          <details>
-            <summary>Posso aggiungere altri servizi?</summary>
-            <p>Sì. Basta duplicare un blocco servizio nel file <code>services.js</code> e modificare i relativi dati.</p>
           </details>
         </div>
       </div>
