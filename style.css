@@ -611,3 +611,35 @@ footer p {
   cursor: pointer;
   font-size: .9rem;
 }
+.bio-details {
+  margin-top: 8px;
+}
+
+.bio-details summary {
+  list-style: none;
+  cursor: pointer;
+  color: #d9c7a3;
+  font-weight: 700;
+  font-size: .9rem;
+  margin: 10px 0 15px;
+}
+
+.bio-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.read-less {
+  display: none;
+}
+
+.bio-details[open] .read-more {
+  display: none;
+}
+
+.bio-details[open] .read-less {
+  display: inline;
+}
+
+.bio-full p {
+  margin: 0 0 14px;
+}
