@@ -676,3 +676,26 @@ footer p {
 .bio-full p {
   margin: 0 0 14px;
 }
+.bio-details[open] .bio-full {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  max-height: none !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+.bio-details .bio-full {
+  position: static !important;
+}
+
+.profile-copy {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.profile-card {
+  height: auto !important;
+  max-height: none !important;
+}
