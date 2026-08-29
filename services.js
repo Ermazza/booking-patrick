@@ -34,5 +34,25 @@ const SERVICES = [
     description: "Sessione individuale online da 120 minuti, indicata quando serve più spazio per analisi, confronto e definizione delle prossime mosse.",
     calLink: "mazza/online120",
     featured: false
+  },
+  {
+    id: "ipnosi-benessere",
+    name: "Incontro di ipnosi per il benessere",
+    price: 70,
+    duration: "90 minuti",
+    tag: "IPNOSI",
+    description: "Sessione individuale di ipnosi orientata al benessere, al rilassamento e al miglioramento dello stato psicofisico.",
+    calLink: "mazza/sessione-di-ipnosi-generica-benessere",
+    featured: false
+  },
+  {
+    id: "ipnosi-specifica",
+    name: "Incontro di ipnosi specifica individualizzata",
+    price: 110,
+    duration: "90 minuti",
+    tag: "IPNOSI",
+    description: "Sessione individuale di ipnosi costruita su un obiettivo specifico e personalizzata in base alle esigenze della persona.",
+    calLink: "mazza/sessione-di-ipnosi-specifica-individualizzata",
+    featured: false
   }
 ];
