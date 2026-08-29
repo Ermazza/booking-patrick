@@ -7,7 +7,7 @@
 const SERVICES = [
   {
     id: "dal-vivo",
-    name: "Incontro in presenza",
+    name: "Incontro di coaching in presenza",
     price: 150,
     duration: "Durata da concordare",
     tag: "IN PRESENZA",
@@ -17,7 +17,7 @@ const SERVICES = [
   },
   {
     id: "online-60",
-    name: "Incontro online",
+    name: "Incontro di coaching online",
     price: 70,
     duration: "60 minuti",
     tag: "ONLINE",
@@ -27,7 +27,7 @@ const SERVICES = [
   },
   {
     id: "online-120",
-    name: "Incontro online",
+    name: "Incontro di coaching online",
     price: 130,
     duration: "120 minuti",
     tag: "ONLINE",
