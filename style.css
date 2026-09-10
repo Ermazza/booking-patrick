@@ -23,6 +23,8 @@ body {
   color: var(--text);
   font-family: Arial, sans-serif;
   line-height: 1.6;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 a {
@@ -39,42 +41,13 @@ code {
 .container {
   width: min(var(--max), calc(100% - 40px));
   margin: 0 auto;
-  .bio-details {
-  position: relative !important;
-  z-index: 20 !important;
 }
 
-.bio-details summary {
-  display: inline-block !important;
-  position: relative !important;
-  z-index: 30 !important;
-  cursor: pointer !important;
-  pointer-events: auto !important;
-  color: #d9c7a3 !important;
-  font-weight: 700 !important;
-  font-size: .9rem !important;
-  margin: 10px 0 15px !important;
-  list-style: none !important;
-}
 
-.bio-details summary::-webkit-details-marker {
-  display: none !important;
-}
+/* =========================
+   HEADER
+   ========================= */
 
-.read-less {
-  display: none;
-}
-
-.bio-details[open] .read-more {
-  display: none;
-}
-
-.bio-details[open] .read-less {
-  display: inline;
-}
-}
-
-/* HEADER */
 .site-header {
   position: sticky;
   top: 0;
@@ -126,9 +99,14 @@ code {
   border-radius: 999px;
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+   ========================= */
+
 .hero {
   padding: 92px 0 82px;
+  overflow: hidden;
   background:
     radial-gradient(circle at 80% 18%, rgba(217,199,163,.13), transparent 30%),
     linear-gradient(180deg, #0a0a0a 0%, #0e0e0e 100%);
@@ -139,6 +117,13 @@ code {
   grid-template-columns: 1.35fr .65fr;
   gap: 68px;
   align-items: start;
+}
+
+.hero-copy {
+  align-self: start;
+  margin-top: 0;
+  padding-top: 0;
+  transform: none;
 }
 
 .eyebrow,
@@ -167,7 +152,7 @@ h1,
 
 h1 {
   font-size: clamp(3.4rem, 7vw, 6.6rem);
-  margin: 22px 0 28px;
+  margin: 0 0 28px;
   font-weight: 600;
 }
 
@@ -193,7 +178,11 @@ h1 {
   margin-top: 28px;
 }
 
-/* BUTTONS */
+
+/* =========================
+   BUTTONS
+   ========================= */
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -230,24 +219,30 @@ h1 {
   width: 100%;
 }
 
-/* PROFILE CARD
-   Dimensioni volutamente più contenute per un risultato più professionale:
-   la foto accompagna il messaggio senza dominare la hero. */
+
+/* =========================
+   PROFILE CARD
+   ========================= */
+
 .profile-card {
   width: 100%;
   max-width: 390px;
   justify-self: end;
+  align-self: start;
   background: linear-gradient(180deg, #181818, #101010);
   border: 1px solid var(--line);
   border-radius: 24px;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0 24px 60px rgba(0,0,0,.28);
+  height: auto;
+  max-height: none;
 }
 
 .profile-image-wrap {
   height: 330px;
   overflow: hidden;
   background: #eee;
+  border-radius: 24px 24px 0 0;
 }
 
 .profile-image {
@@ -260,6 +255,9 @@ h1 {
 
 .profile-copy {
   padding: 24px 26px 26px;
+  height: auto;
+  max-height: none;
+  overflow: visible;
 }
 
 .profile-copy h2 {
@@ -274,7 +272,68 @@ h1 {
   margin-bottom: 22px;
 }
 
-/* SECTIONS */
+
+/* =========================
+   BIO ESPANDIBILE
+   ========================= */
+
+.bio-details {
+  margin-top: 8px;
+  position: relative;
+  z-index: 20;
+}
+
+.bio-details summary {
+  display: inline-block;
+  position: relative;
+  z-index: 30;
+  cursor: pointer;
+  pointer-events: auto;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: .9rem;
+  margin: 10px 0 15px;
+  list-style: none;
+}
+
+.bio-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.read-less {
+  display: none;
+}
+
+.bio-details[open] .read-more {
+  display: none;
+}
+
+.bio-details[open] .read-less {
+  display: inline;
+}
+
+.bio-details .bio-full {
+  position: static;
+}
+
+.bio-details[open] .bio-full {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  max-height: none;
+  height: auto;
+  overflow: visible;
+}
+
+.bio-full p {
+  margin: 0 0 14px;
+}
+
+
+/* =========================
+   SEZIONI GENERALI
+   ========================= */
+
 .section {
   padding: 95px 0;
 }
@@ -284,6 +343,11 @@ h1 {
   margin: 12px 0 40px;
   max-width: 850px;
 }
+
+
+/* =========================
+   SERVIZI
+   ========================= */
 
 .services-grid {
   display: grid;
@@ -338,7 +402,11 @@ h1 {
   margin-top: 24px;
 }
 
-/* PROCESS */
+
+/* =========================
+   PROCESSO
+   ========================= */
+
 .steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -369,7 +437,11 @@ h1 {
   background: var(--surface);
 }
 
-/* BOOKING */
+
+/* =========================
+   PRENOTAZIONE
+   ========================= */
+
 .booking-section {
   background: #0d0d0d;
 }
@@ -427,7 +499,91 @@ h1 {
   display: none;
 }
 
-/* FAQ */
+
+/* =========================
+   LIBRO METALLENATORE
+   ========================= */
+
+.book-section {
+  background: #121212;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 60px;
+  align-items: start;
+}
+
+.book-cover-wrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.book-cover {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 28px 70px rgba(0,0,0,.45);
+}
+
+.book-copy {
+  min-width: 0;
+}
+
+.book-copy .section-title {
+  margin-top: 10px;
+  margin-bottom: 28px;
+}
+
+.book-copy h3 {
+  font-size: 1.45rem;
+  line-height: 1.35;
+  margin: 0 0 8px;
+  max-width: 720px;
+}
+
+.book-subtitle {
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.book-copy > p {
+  max-width: 760px;
+  color: #d1cbc0;
+}
+
+.book-points {
+  margin: 28px 0;
+  padding: 22px 24px;
+  border-left: 2px solid var(--accent);
+  background: rgba(255,255,255,.025);
+}
+
+.book-points ul {
+  margin-bottom: 0;
+  padding-left: 20px;
+}
+
+.book-points li {
+  margin: 8px 0;
+  color: #d1cbc0;
+}
+
+.book-author {
+  margin: 28px 0;
+  color: var(--muted) !important;
+}
+
+
+/* =========================
+   FAQ
+   ========================= */
+
 .faq-wrap {
   display: grid;
   grid-template-columns: .7fr 1.3fr;
@@ -453,7 +609,11 @@ h1 {
   max-width: 720px;
 }
 
-/* FINAL CTA */
+
+/* =========================
+   CTA FINALE
+   ========================= */
+
 .final-cta {
   background: var(--accent);
   color: #0a0a0a;
@@ -478,7 +638,11 @@ h1 {
   max-width: 850px;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+   ========================= */
+
 footer {
   padding: 42px 0;
   border-top: 1px solid var(--line);
@@ -502,8 +666,13 @@ footer p {
   color: var(--muted);
 }
 
-/* TABLET */
+
+/* =========================
+   TABLET
+   ========================= */
+
 @media (max-width: 900px) {
+
   .hero-grid,
   .booking-wrap,
   .faq-wrap {
@@ -538,8 +707,34 @@ footer p {
   }
 }
 
-/* MOBILE */
+
+/* =========================
+   LIBRO - TABLET/MOBILE
+   ========================= */
+
+@media (max-width: 800px) {
+
+  .book-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .book-cover-wrap {
+    justify-content: center;
+  }
+
+  .book-cover {
+    max-width: 230px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
 @media (max-width: 600px) {
+
   .container {
     width: min(100% - 28px, var(--max));
   }
@@ -589,113 +784,4 @@ footer p {
   .footer-links {
     flex-wrap: wrap;
   }
-}
-.hero-grid {
-  align-items: start !important;
-}
-
-.hero-copy {
-  align-self: start !important;
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-  transform: none !important;
-}
-
-.hero-copy h1 {
-  margin-top: 0 !important;
-}
-.bio-text {
-  max-height: 145px;
-  overflow: hidden;
-  position: relative;
-  transition: max-height .4s ease;
-}
-
-.bio-text::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 50px;
-  background: linear-gradient(
-    to bottom,
-    rgba(16,16,16,0),
-    rgba(16,16,16,1)
-  );
-}
-
-.bio-text.expanded {
-  max-height: 1000px;
-}
-
-.bio-text.expanded::after {
-  display: none;
-}
-
-.bio-toggle {
-  margin-top: 10px;
-  margin-bottom: 16px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: #d9c7a3;
-  font-weight: 700;
-  cursor: pointer;
-  font-size: .9rem;
-}
-.bio-details {
-  margin-top: 8px;
-}
-
-.bio-details summary {
-  list-style: none;
-  cursor: pointer;
-  color: #d9c7a3;
-  font-weight: 700;
-  font-size: .9rem;
-  margin: 10px 0 15px;
-}
-
-.bio-details summary::-webkit-details-marker {
-  display: none;
-}
-
-.read-less {
-  display: none;
-}
-
-.bio-details[open] .read-more {
-  display: none;
-}
-
-.bio-details[open] .read-less {
-  display: inline;
-}
-
-.bio-full p {
-  margin: 0 0 14px;
-}
-.bio-details[open] .bio-full {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  max-height: none !important;
-  height: auto !important;
-  overflow: visible !important;
-}
-
-.bio-details .bio-full {
-  position: static !important;
-}
-
-.profile-copy {
-  height: auto !important;
-  max-height: none !important;
-  overflow: visible !important;
-}
-
-.profile-card {
-  height: auto !important;
-  max-height: none !important;
 }
